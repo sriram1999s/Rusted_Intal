@@ -1,5 +1,5 @@
 use intal::binop;
-use intal::macros::CompRes;
+use intal::def::CompRes;
 use intal::processing::intal_remove_leadzeros;
 fn main() {
     let intal1 = "100";
