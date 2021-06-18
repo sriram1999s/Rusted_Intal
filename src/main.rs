@@ -1,3 +1,4 @@
+use intal::test;
 fn main() {
-    println!("Hello, world!");
+    test();
 }
