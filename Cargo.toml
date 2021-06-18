@@ -8,7 +8,7 @@ edition = "2018"
 
 [lib]
 name = "intal"
-path = "src/lib.rs"
+path = "src/intal.rs"
 
 [[bin]]
 name = "main"
