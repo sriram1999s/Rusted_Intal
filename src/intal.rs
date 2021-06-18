@@ -12,9 +12,9 @@ pub mod macros {
         Equal,
     }
 }
-pub mod binop {
+pub mod processing {
     // To eliminate leading zeros
-    fn intal_remove_leadzeros(intal: &str) -> String {
+    pub fn intal_remove_leadzeros(intal: &str) -> String {
         let mut index = 0;
         let size = intal.len();
         let s = intal.as_bytes();
@@ -28,6 +28,9 @@ pub mod binop {
         }
         String::from(&intal[index..])
     }
+}
+pub mod binop {
+
     // Returns the sum of two intals.
     pub fn intal_add(intal1: &str, intal2: &str) -> String {
         let s1 = intal1.chars().rev();
@@ -162,6 +165,6 @@ pub mod binop {
         let res: String = res.chars().rev().collect();
         // String::from("test")
         // let ix = ;
-        Some(intal_remove_leadzeros(&res[..]))
+        Some(crate::processing::intal_remove_leadzeros(&res[..]))
     }
 }
