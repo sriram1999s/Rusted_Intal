@@ -131,9 +131,9 @@ pub mod binop {
             // println!("d1: {} d2: {} borrow: {}", d1, d2, borrow);
             let temp = borrow;
             let difference;
-            if d1 - temp < d2 {
+            if d1 < temp + d2 {
                 borrow = 1;
-                difference = 10 + (d1 - temp) - d2;
+                difference = 10 + d1 - temp - d2;
             } else {
                 borrow = 0;
                 difference = d1 - temp - d2;
@@ -166,5 +166,36 @@ pub mod binop {
         // String::from("test")
         // let ix = ;
         Some(crate::processing::intal_remove_leadzeros(&res[..]))
+    }
+
+    // Returns the product of two intals.
+    pub fn intal_multiply(intal1: &str, intal2: &str) -> String {
+        let mut zero_count: i32 = 0;
+        let mut carry;
+        let s2 = intal2.chars().rev();
+        let mut res = String::from("0");
+        for c2 in s2 {
+            carry = 0;
+            let s1 = intal1.chars().rev();
+            let d2 = c2.to_digit(crate::def::RADIX).unwrap();
+            let mut temp = String::from("");
+            for c1 in s1 {
+                let d1 = c1.to_digit(crate::def::RADIX).unwrap();
+                let digit = (d1 * d2 + carry) % 10;
+                carry = (d1 * d2 + carry) / 10;
+                // println!("digit: {} carry: {}", digit, carry);
+                temp.push(char::from_digit(digit, crate::def::RADIX).unwrap());
+            }
+            if carry != 0 {
+                temp.push(char::from_digit(carry, crate::def::RADIX).unwrap());
+            }
+            temp = temp.chars().rev().collect();
+            for _i in 0..zero_count {
+                temp.push('0');
+            }
+            zero_count += 1;
+            res = intal_add(&res[..], &temp[..]);
+        }
+        res
     }
 }
