@@ -198,4 +198,34 @@ pub mod binop {
         }
         res
     }
+
+
+    // Returns intal1 ^ intal2.
+    pub fn intal_pow(intal1: &str, intal2: &str) -> Option<String> {
+        let  res;
+        if intal2.eq("0") {
+            if intal1.eq("0") {
+                return None
+            }
+            else {
+                return Some(String::from("1"))
+            }
+        } else {
+            let diff_1 = intal_diff(intal2, "1").unwrap();
+            let rec_pow = intal_pow(intal1, &diff_1[..]).unwrap();
+            res = intal_multiply(&rec_pow[..], intal1);
+        }
+        // Some(String::from(""))
+        Some(res)
+    }
+
+
+    /* yet to complete */
+    // Returns intal1 mod intal2
+    pub fn intal_mod(intal1: &str, intal2: &str) -> String {
+        if let crate::def::CompRes::Lesser = crate::binop::intal_compare(intal1, intal2) {
+            return String::from(&intal1[..])
+        };
+        String::from("")
+    }
 }
