@@ -6,6 +6,7 @@
 // Eg: Integer 25 is stored in str as '2' at str[0], '5' at str[1], and null char at str[2].
 pub mod def {
     pub const RADIX: u32 = 10;
+    #[derive(PartialEq)]
     pub enum CompRes {
         Greater,
         Lesser,
@@ -223,9 +224,27 @@ pub mod binop {
     /* yet to complete */
     // Returns intal1 mod intal2
     pub fn intal_mod(intal1: &str, intal2: &str) -> String {
-        if let crate::def::CompRes::Lesser = crate::binop::intal_compare(intal1, intal2) {
-            return String::from(&intal1[..])
-        };
-        String::from("")
+        if intal1.eq(intal2) {
+            return String::from("0")
+        }
+        if intal2.eq("1") {
+            return String::from("0")
+        }
+        let mut res = String::from(&intal1[..]);
+        let mut curr;
+        let mut prev;
+        while intal_compare(&res[..], intal2) == crate::def::CompRes::Greater {
+            curr = String::from(intal2);
+            prev = String::from("");
+            while intal_compare(&res[..], &curr[..]) == crate::def::CompRes::Greater {
+                prev = curr;
+                curr = intal_multiply(&prev[..], "10");
+            }
+            res = intal_diff(&res[..], &prev[..]).unwrap();
+            if intal_compare(&res[..], intal2) == crate::def::CompRes::Equal {
+                return String::from("0")
+            }
+        }
+        res
     }
 }

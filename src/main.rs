@@ -33,8 +33,6 @@ fn main() {
     let res_pow = binop::intal_pow(num, pow);
     println!("num {}, pow {}, res_pow {}", num, pow, res_pow.unwrap());
 
-    /*
     let res_mod = binop::intal_mod(intal1, intal2);
-    println!("intal1 {}, intal2 {}, res_mod {}", intal1, intal2, res_mod);
-    */
+    println!("a {}, b {}, res_mod {}", intal1, intal2, res_mod);
 }
