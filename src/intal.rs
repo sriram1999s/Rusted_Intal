@@ -200,7 +200,6 @@ pub mod binop {
         res
     }
 
-
     // Returns intal1 ^ intal2.
     pub fn intal_pow(intal1: &str, intal2: &str) -> Option<String> {
         let  res;
@@ -220,8 +219,6 @@ pub mod binop {
         Some(res)
     }
 
-
-    /* yet to complete */
     // Returns intal1 mod intal2
     pub fn intal_mod(intal1: &str, intal2: &str) -> String {
         if intal1.eq(intal2) {
