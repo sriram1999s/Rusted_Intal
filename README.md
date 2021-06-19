@@ -14,6 +14,7 @@ Binary Operations:
   - [intal_add](#Addition)
   - [intal_compare](#Comparison)
   - [intal_diff](#Subtraction)
+  - [intal_multiply](#Multiplication)
 
 ## Inclusion
 
@@ -58,8 +59,8 @@ Function ```intal_add``` is provided to add two intals. It takes two parameters,
 ```rust
 use intal::binop;
 //...
-let intal1 = "100";
-let intal2 = "1";
+let intal1 = "267458350436957867";
+let intal2 = "32784692498348";
 let res_add = binop::intal_add(intal1, intal2);
 ```
 
@@ -70,8 +71,8 @@ Function ```intal_compare``` is provided to compare two intals. It takes two par
 ```rust
 use intal::binop;
 //...
-let intal1 = "100";
-let intal2 = "1";
+let intal1 = "267458350436957867";
+let intal2 = "32784692498348";
 let res_comp = binop::intal_compare(intal1, intal2);
 match res_comp {
     CompRes::Greater => println!("Greater!"),
@@ -87,13 +88,24 @@ Function ```intal_diff``` is provided to compare two intals. It takes two parame
 ```rust
 use intal::binop;
 //...
-let intal1 = "100";
-let intal2 = "1";
+let intal1 = "267458350436957867";
+let intal2 = "32784692498348";
 let res_diff = binop::intal_diff(intal1, intal2);
 match res_diff {
   Some(number) => println!("The difference is {}",number),
   None => println!("Oops!Nonnegative are not valid"),
 }
+```
+### Multiplication
+
+Function ```intal_multiply``` is provided to add two intals. It takes two parameters, both of type ```&str```. It returns a ```String```.
+
+```rust
+use intal::binop;
+//...
+let intal1 = "267458350436957867";
+let intal2 = "32784692498348";
+let res_mul = binop::intal_multiply(intal1, intal2);
 ```
 
 ## Types
