@@ -15,7 +15,7 @@ Binary Operations:
   - [intal_compare](#Comparison)
   - [intal_diff](#Subtraction)
   - [intal_multiply](#Multiplication)
-
+  - [intal_pow](#Exponentiation)
 ## Inclusion
 
 To include defined types:
@@ -83,7 +83,7 @@ match res_comp {
 
 ### Subtraction
 
-Function ```intal_diff``` is provided to compare two intals. It takes two parameters, both of type ```&str```. Since intals are nonnegative, the function returns ```Option<String>```, ```Some(string)``` if difference is nonnegative and  ```None``` otherwise.
+Function ```intal_diff``` is provided to subtract two intals. It takes two parameters, both of type ```&str```. Since intals are nonnegative, the function returns ```Option<String>```, ```Some(string)``` if difference is nonnegative and  ```None``` otherwise.
 
 ```rust
 use intal::binop;
@@ -106,6 +106,16 @@ use intal::binop;
 let intal1 = "267458350436957867";
 let intal2 = "32784692498348";
 let res_mul = binop::intal_multiply(intal1, intal2);
+```
+
+### Exponentiation
+
+Function ```intal_pow``` is provided for calculating powers. It takes two parameters, both of type ```&str```. It returns ```Option<String>```, it will return ```Some(string)``` for all cases except the 0^0 case, for which it will return ```None```.
+
+```rust
+let num = "2";
+let pow = "3";
+let res_pow = binop::intal_pow(num, pow);
 ```
 
 ## Types
