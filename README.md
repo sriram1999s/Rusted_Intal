@@ -113,6 +113,8 @@ let res_mul = binop::intal_multiply(intal1, intal2);
 Function ```intal_pow``` is provided for calculating powers. It takes two parameters, both of type ```&str```. It returns ```Option<String>```, it will return ```Some(string)``` for all cases except the 0^0 case, for which it will return ```None```.
 
 ```rust
+use intal::binop;
+//...
 let num = "2";
 let pow = "3";
 let res_pow = binop::intal_pow(num, pow);
