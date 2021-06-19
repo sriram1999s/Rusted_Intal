@@ -16,6 +16,8 @@ Binary Operations:
   - [intal_diff](#Subtraction)
   - [intal_multiply](#Multiplication)
   - [intal_pow](#Exponentiation)
+  - [intal_mod](#Modulo)
+
 ## Inclusion
 
 To include defined types:
@@ -98,7 +100,7 @@ match res_diff {
 ```
 ### Multiplication
 
-Function ```intal_multiply``` is provided to add two intals. It takes two parameters, both of type ```&str```. It returns a ```String```.
+Function ```intal_multiply``` is provided to multiply two intals. It takes two parameters, both of type ```&str```. It returns a ```String```.
 
 ```rust
 use intal::binop;
@@ -118,6 +120,17 @@ use intal::binop;
 let num = "2";
 let pow = "3";
 let res_pow = binop::intal_pow(num, pow);
+```
+### Modulo
+
+Function ```intal_mod``` is provided to find intal1 mod intal2. It takes two parameters, both of type ```&str```. It returns a ```String```.
+
+```rust
+let intal1 = "267458350436957867";
+let intal2 = "32784692498348";
+//...
+let res_mod = binop::intal_mod(intal1, intal2);
+println!("a {}, b {}, res_mod {}", intal1, intal2, res_mod);
 ```
 
 ## Types
