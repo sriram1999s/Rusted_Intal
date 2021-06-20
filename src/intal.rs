@@ -244,4 +244,15 @@ pub mod binop {
         }
         res
     }
+
+    // Returns the factorial of n
+    pub fn intal_factorial(intal: &str) -> String {
+        let mut res = String::from("1");
+        let mut curr = String::from(&intal[..]);
+        while intal_compare(&curr[..], "0") != crate::def::CompRes::Equal {
+            res = intal_multiply(&res[..], &curr[..]);
+            curr = intal_diff(&curr[..], "1").unwrap();
+        }
+        res
+    }
 }

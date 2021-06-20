@@ -35,4 +35,8 @@ fn main() {
 
     let res_mod = binop::intal_mod(intal1, intal2);
     println!("a {}, b {}, res_mod {}", intal1, intal2, res_mod);
+
+    let n = "100";
+    let res_factorial = binop::intal_factorial(n);
+    println!("{} factoral is : {}", n, res_factorial);
 }
