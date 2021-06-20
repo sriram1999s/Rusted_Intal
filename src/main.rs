@@ -39,4 +39,9 @@ fn main() {
     let n = "100";
     let res_factorial = binop::intal_factorial(n);
     println!("{} factoral is : {}", n, res_factorial);
+
+    let a = "24";
+    let b = "36";
+    let res_gcd = binop::intal_gcd(a, b);
+    println!("The GCD of {} and {} is {}", a, b, res_gcd);
 }

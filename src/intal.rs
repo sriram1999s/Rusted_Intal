@@ -255,4 +255,14 @@ pub mod binop {
         }
         res
     }
+
+    // Returns GCD of two intals
+    pub fn intal_gcd(intal1: &str, intal2: &str) -> String {
+        if intal_compare(&intal2[..], "0") != crate::def::CompRes::Equal {
+            let modulo = intal_mod(intal1, intal2);
+            return intal_gcd(intal2, &modulo[..])
+        } else {
+            return String::from(intal1)
+        }
+    }
 }
