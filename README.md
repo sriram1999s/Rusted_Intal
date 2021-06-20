@@ -17,6 +17,8 @@ Binary Operations:
   - [intal_multiply](#Multiplication)
   - [intal_pow](#Exponentiation)
   - [intal_mod](#Modulo)
+  - [intal_gcd](#GCD)
+  - [intal_factorial](#Factoral)
 
 ## Inclusion
 
@@ -131,6 +133,26 @@ let intal2 = "32784692498348";
 //...
 let res_mod = binop::intal_mod(intal1, intal2);
 println!("a {}, b {}, res_mod {}", intal1, intal2, res_mod);
+```
+### GCD
+
+Function ```intal_gcd``` is provided to find the greatest common divisor of intal1 and intal2. It takes two parameters, both of type ```&str```. It returns a ```String```
+
+```rust
+let n = "100";
+let res_factorial = binop::intal_factorial(n);
+println!("{} factoral is : {}", n, res_factorial);
+```
+
+### Factoral
+
+Function ```intal_factorial``` is provided to find the factorial of an intal. It takes a single parameter of type ```&str```. It returns a ```String```
+
+```rust
+let a = "24";
+let b = "36";
+let res_gcd = binop::intal_gcd(a, b);
+println!("The GCD of {} and {} is {}", a, b, res_gcd);
 ```
 
 ## Types
